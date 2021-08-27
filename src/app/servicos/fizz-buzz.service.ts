@@ -1,0 +1,26 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FizzBuzzService {
+
+  constructor() { }
+
+  gerar(limite: number): string[] {
+    const fizzBuss: string[] = [];
+    for(let i = 0; i < limite; i++ ){
+      if((i + 1) % 15 === 0) {
+        fizzBuss.push('FizzBuzz')
+      } else if((i + 1) % 3 === 0 ){
+        fizzBuss.push('Fizz')
+      } else if((i + 1) % 5 === 0 ){
+        fizzBuss.push('Buzz')
+      } else {
+        fizzBuss.push((i + 1).toString());
+      }
+    }
+    return fizzBuss;
+  }
+  
+}
