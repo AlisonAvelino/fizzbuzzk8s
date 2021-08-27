@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fizzbuzzk8s
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      fizzbuzzk8s: web
+  template:
+    metadata:
+      labels:
+        fizzbuzzk8s: web
+    spec:
+      containers:
+      - name: fizzbuzzk8s-site
+        image: sanmcosta/fizzbuzzk8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fizzbuzzk8s-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    fizzbuzzk8s: web
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30301
