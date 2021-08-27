@@ -1,0 +1,30 @@
+<div class="form-body">
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 shadow p-3 mb-5 bg-white rounded">
+            <h3>Fizz Buzz</h3>
+            <form>
+                <div class="col-md-12">
+                    <label for="qtd">Digite a quantidade limite para geração</label>
+                    <input class="form-control" appNumero id="limite" placeholder="Quantidade" required
+                        (keyup)='setLimite($event)' [value]='15' maxlength="15">
+                </div>
+
+                <div class="form-button mt-3">
+                    <button id="btnGerar" type="submit" class="btn btn-primary" (click)='gerar($event)'>Gerar</button>
+                </div>
+            </form>
+            <div class="col-md-12">
+                <br>
+                <h2 *ngIf="resultado != []" class="resultado">{{limite | retorno}}</h2>
+                <ul>
+                    <li *ngFor="let res of resultado">
+                        {{res}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
