@@ -11,4 +11,5 @@ export class NumeroDirective {
   onKeyup($event: any) {
     $event.target.value = $event.target.value.replace(/\D/g, '');
   }
+
 }

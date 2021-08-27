@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class FizzBuzzService {
 
   constructor() { }
-
   gerar(limite: number): string[] {
     const fizzBuss: string[] = [];
     for(let i = 0; i < limite; i++ ){
@@ -22,5 +21,4 @@ export class FizzBuzzService {
     }
     return fizzBuss;
   }
-  
 }

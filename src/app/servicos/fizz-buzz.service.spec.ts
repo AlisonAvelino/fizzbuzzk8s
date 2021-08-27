@@ -13,7 +13,7 @@ describe('FizzBuzzService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
+  
   it('deve retornar números para os primeiros elementos.', () => { 
     const fizzBuzz: string[] = service.gerar(10);
     expect(fizzBuzz[0]).toBe('1');
@@ -52,5 +52,4 @@ describe('FizzBuzzService', () => {
     const fizzBuzz = service.gerar(-10);
     expect(fizzBuzz.length).toBe(0)
   });
-  
 });
